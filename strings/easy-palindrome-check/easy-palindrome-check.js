@@ -3,7 +3,7 @@
  */
 
 function isPalindrome(string) {
-    if (!string && typeof string != "string") return
+    if (string && typeof string !== "string") return
 
     let reversedString = string.split("").reverse().join("")
 
