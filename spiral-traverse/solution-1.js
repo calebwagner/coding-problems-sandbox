@@ -8,13 +8,13 @@ array = [
 function spiralTraverse(array) {
     let results = [];
     let startRow = 0;
-    endRow = array.length - 1;
-    startCol = 0;
+    let endRow = array.length - 1;
+    let startCol = 0;
     let endCol = array[0].length - 1;
 
     while (startRow <= endRow && startCol <= endCol) {
         for (let col = startCol; col <= endCol; col++) {
-            results.push(array[startRow][end])
+            results.push(array[startRow][col])
         }
         for (let row = startRow + 1; row <= endRow; row++) {
             results.push(array[row][endCol])
@@ -34,7 +34,7 @@ function spiralTraverse(array) {
         startCol +=
         endCol -=
     }
-    return result
+    return results
 }
 
 spiralTraverse(array)
