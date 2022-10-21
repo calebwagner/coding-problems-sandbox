@@ -6,24 +6,36 @@ array = [
 ]
 
 function spiralTraverse(array) {
-    let sortedArray = [];
+    let results = [];
+    let startRow = 0;
+    endRow = array.length - 1;
+    startCol = 0;
+    let endCol = array[0].length - 1;
 
-    for (let i = 0; i < array.length; i++) {
-        let newArray = array[i]
-        for (let j = 0; j < newArray.length; j++) {
-            sortedArray.push(newArray[j])
+    while (startRow <= endRow && startCol <= endCol) {
+        for (let col = startCol; col <= endCol; col++) {
+            results.push(array[startRow][end])
         }
+        for (let row = startRow + 1; row <= endRow; row++) {
+            results.push(array[row][endCol])
+        }
+        for (let col = endCol - 1; col >= startCol; col--) {
+            if (endRow > startRow) {
+                results.push(array[endRow][col])
+            }
+        }
+        for (let row = endRow - 1; row > startRow; row--) {
+            if (endCol > startCol) {
+                results.push(array[row][startCol])
+            }
+        }
+        startRow += 1
+        endRow -=
+        startCol +=
+        endCol -=
     }
-  
+    return result
 }
 
 spiralTraverse(array)
 
-// let sortedArray = [];
-
-// for (let i = 0; i < array.length; i++) {
-//     let newArray = array[i]
-//     for (let j = 0; j < newArray.length; j++) {
-//         sortedArray.push(newArray[j])
-//     }
-// }
