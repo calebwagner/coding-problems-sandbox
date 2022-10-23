@@ -15,3 +15,14 @@ function twoNumberSum(array, targetSum) {
     }
     return [];
 }
+
+// example w/o hash map
+function twoNumSum(array, targetSum) {
+    for (let num of array) {
+        const possibleNum = targetSum - num;
+        if (array.includes(possibleNum) && possibleNum !== num) {
+            return [num, possibleNum]
+        }
+    }
+    return [];
+}
