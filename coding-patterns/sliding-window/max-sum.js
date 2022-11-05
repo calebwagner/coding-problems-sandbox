@@ -25,36 +25,37 @@ function maxSum(arr, k) {
 
 // O(n*k)
 function maxSum( arr, k){
-    let max_sum = 0;
+    let maxSum = 0;
 
     for (let i = 0; i < arr.length - k + 1; i++) {
-        let current_sum = 0;
+        let currentSum = 0;
         for (let j = 0; j < k; j++)
-            current_sum += arr[i + j];
+        currentSum += arr[i + j];
 
         // Update result if required.
-        max_sum = Math.max(current_sum, max_sum);
+        if (currentSum > maxSum) {
+            maxSum = currentSum;
+        }
     }
-
-    return max_sum;
+    return maxSum;
 }
 
 // O(n) w/o Math.max method
 function maxSum(arr, k) {
-    let max = 0;
-    let sum = 0;
+    let maxSum = 0;
+    let currentSum = 0;
     // find initial sum of first k elements
     for (let i = 0; i < k; i++) {
-        sum += arr[i];
-        max = sum;
+        currentSum += arr[i];
+        maxSum = currentSum;
     }
     // iterate the array once
     // and increment the right edge
     for (let i = k; i < arr.length; i++) {
-        sum += arr[i] - arr[i - k];
-        if (sum > max) {
-            max = sum;
+        currentSum += arr[i] - arr[i - k];
+        if (currentSum > maxSum) {
+            maxSum = currentSum;
         }
     }
-    return max;
+    return maxSum;
 }
