@@ -59,3 +59,20 @@ function maxSum(arr, k) {
     }
     return maxSum;
 }
+
+// O(n)
+const nums = [1, 2, 3, 5, 4, 8, 6, 2];
+const size = 3;
+function maxSubArraySum(nums, size) {
+    let currentSum = 0;
+    let maxSumSeen = -Infinity;
+
+    for (let i = 0; i < nums.length; i++) {
+        currentSum += nums[i];
+        if (i >= size - 1) {
+            maxSumSeen = Math.max(currentSum, maxSumSeen);
+            currentSum -= nums[i - (size - 1)]
+        }
+    }
+    return maxSumSeen
+}
