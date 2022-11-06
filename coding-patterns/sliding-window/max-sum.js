@@ -23,7 +23,7 @@ function maxSum(arr, k) {
   return maxSum;
 }
 
-// O(n*k)
+// O(n^2)
 function maxSum( arr, k){
     let maxSum = 0;
 
