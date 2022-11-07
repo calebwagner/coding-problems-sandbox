@@ -6,12 +6,12 @@ let targetSum = 10;
 function twoNumberSum(array, targetSum) {
     const numbers = {}; // hash map
     for (const number of array) {
-        const targetSumSubtracted = targetSum - number;
-        if (targetSumSubtracted in numbers) {
-            return [targetSumSubtracted, number];
-        } else {
-            numbers[number] = true;
+        const difference = targetSum - number;
+        if (difference in numbers) {
+            return [difference, number];
         }
+        numbers[number] = true;
+
     }
     return [];
 }

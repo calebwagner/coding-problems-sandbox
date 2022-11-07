@@ -11,3 +11,7 @@ Note that the target sum has to be obtained by summing two different
 integers in the array; you can't add a single integer to itself in
 order to obtain the target sum.
 
+Possible Solutions: best to worst
+hash table
+two pointers
+nested for loop

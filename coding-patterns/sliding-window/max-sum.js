@@ -65,14 +65,36 @@ const nums = [1, 2, 3, 5, 4, 8, 6, 2];
 const size = 3;
 function maxSubArraySum(nums, size) {
     let currentSum = 0;
-    let maxSumSeen = -Infinity;
+    let maxSum = -Infinity;
 
     for (let i = 0; i < nums.length; i++) {
         currentSum += nums[i];
-        if (i >= size - 1) {
-            maxSumSeen = Math.max(currentSum, maxSumSeen);
+        // this we give us the subset of n elements (n = size) in the array
+        if (i >= size - 1 && currentSum > maxSum) {
+            maxSum = currentSum;
             currentSum -= nums[i - (size - 1)]
         }
     }
-    return maxSumSeen
+    return maxSum
 }
+
+function max_sub_array_of_size_k(k, arr) {
+    let maxSum = 0;
+    let windowSum = 0;
+    let windowStart = 0;
+
+    for (i = 0; i < arr.length; i++) {
+        windowSum += arr[i]; // add the next element
+        // slide the window, no need to slide if we've not hit the window size of 'k'
+        if (i >= k - 1) {
+            maxSum = Math.max(maxSum, windowSum);
+            windowSum -= arr[windowStart]; // subtract the element going out
+            windowStart += 1; // slide the window ahead
+        }
+    }
+    return maxSum;
+}
+
+max_sub_array_of_size_k(3, [2, 1, 5, 1, 3, 2])
+
+max_sub_array_of_size_k(2, [2, 3, 4, 1, 5])
