@@ -5,13 +5,16 @@ function binarySearch(arr, x) {
     let end = arr.length - 1;
 
     while (start < end) {
-        let middle = (start - (end - start) / 2);
-        if (x === arr[middle]) {
+        let mid = (start - (end - start) / 2);
+        if (x === arr[mid]) {
+            console.log(`target was found!`)
             return true
-        } else if (x > middle) {
-            start = middle + 1;
+        } else if (x > mid) {
+            start = mid + 1;
+            console.log(`need to go higher!`)
         } else {
-            end = middle - 1
+            end = mid - 1
+            console.log(`need to go lower!`)
         }
     }
     return false;
