@@ -16,3 +16,18 @@ function runLengthEncoding(string) {
 }
 
 runLengthEncoding(string)
+
+
+function runLengthEncoding2(string) {
+    let newString = [];
+    let counter = 1;
+
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] !== string[i + 1] || counter === 9) {
+          newString.push(string[i], counter)
+          counter = 0;
+      }
+          counter++
+    }
+    return newString.join("")
+  }
