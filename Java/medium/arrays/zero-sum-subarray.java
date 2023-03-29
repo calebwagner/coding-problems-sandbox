@@ -1,6 +1,6 @@
 class Program {
     public boolean zeroSumSubarray(int[] nums) {
-      HastSet<Interger> = sums = new HashSet<Integer>();
+      HashSet<Integer> sums = new HashSet<Integer>();
       sums.add(0);
       int currentSum = 0;
       for (int num : nums) {
@@ -13,4 +13,3 @@ class Program {
       return false;
     }
   }
-  
